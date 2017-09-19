@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { ReactCytoscape } from 'react-cytoscape';
 import { ReactCytoscape } from '../../lib';
+import './style.css'
 
 class Graph extends Component {
 
@@ -70,13 +71,6 @@ class Graph extends Component {
 				},
 				{
 					"data": {
-						"id": "100054-103482",
-						"source": 100054,
-						"target": 103482
-					}
-				},
-				{
-					"data": {
 						"id": "105061-100276",
 						"source": 105061,
 						"target": 100276
@@ -87,8 +81,9 @@ class Graph extends Component {
 	}
 
 	render() {
+		
 		return (
-			<ReactCytoscape id="yop" elements={this.getElements()} />
+			<ReactCytoscape containerID="yop" elements={this.getElements()} cyRef={(cy) => {this.cy = cy; console.log(this.cy)}}/>
 		);
 	}
 }
