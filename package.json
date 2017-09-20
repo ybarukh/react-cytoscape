@@ -11,7 +11,8 @@
     "build": "babel lib -d build",
     "build:watch": "babel lib -w -d build",
     "prepack": "prepack.bat",
-    "dev": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "localpublish": "localpublish.bat"
   },
   "keywords": [],
   "author": "",
