@@ -1,5 +1,7 @@
 # React component for Cytoscape
 
+A React component to use simply the cytoscape js library.
+   
 [http://js.cytoscape.org](http://js.cytoscape.org)
 
 ## Installation
