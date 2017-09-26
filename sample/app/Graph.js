@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { ReactCytoscape } from 'react-cytoscape';
 import { ReactCytoscape } from '../../lib';
 import './style.css'
 
@@ -7,83 +6,25 @@ class Graph extends Component {
 
 	getElements() {
 		return {
-			"nodes": [
-				{
-					"data": {
-						"id": 100276,
-						"label": "CRC51"
-					},
-					"classes": "cellule",
-					"description": "3 membres actifs"
-				},
-				{
-					"data": {
-						"id": 100055,
-						"label": "Service CRC Prévoyance Lyon"
-					},
-					"classes": "structure",
-					"description": "1 cellules"
-				},
-				{
-					"data": {
-						"id": 100054,
-						"label": "Direction Expérience Client"
-					},
-					"classes": "structure",
-					"description": "5 cellules"
-				},
-				{
-					"data": {
-						"id": 105061,
-						"label": "Temimi Houda"
-					},
-					"classes": "utilisateur"
-				}
+			nodes: [
+				{ data: { id: 'a', parent: 'b' }, position: { x: 215, y: 85 } },
+				{ data: { id: 'b' } },
+				{ data: { id: 'c', parent: 'b' }, position: { x: 300, y: 85 } },
+				{ data: { id: 'd' }, position: { x: 215, y: 175 } },
+				{ data: { id: 'e' } },
+				{ data: { id: 'f', parent: 'e' }, position: { x: 300, y: 175 } }
 			],
-			"edges": [
-				{
-					"data": {
-						"id": "100276-100055",
-						"source": 100276,
-						"target": 100055
-					}
-				},
-				{
-					"data": {
-						"id": "100276-105061",
-						"source": 100276,
-						"target": 105061
-					}
-				},
-				{
-					"data": {
-						"id": "100055-105061",
-						"source": 100055,
-						"target": 105061
-					}
-				},
-				{
-					"data": {
-						"id": "100055-100054",
-						"source": 100055,
-						"target": 100054
-					}
-				},
-				{
-					"data": {
-						"id": "105061-100276",
-						"source": 105061,
-						"target": 100276
-					}
-				}
+			edges: [
+				{ data: { id: 'ad', source: 'a', target: 'd' } },
+				{ data: { id: 'eb', source: 'e', target: 'b' } }
 			]
 		};
 	}
 
 	render() {
-		
+
 		return (
-			<ReactCytoscape containerID="yop" elements={this.getElements()} cyRef={(cy) => {this.cy = cy; console.log(this.cy)}}/>
+			<ReactCytoscape containerID="cy" elements={this.getElements()} cyRef={(cy) => { this.cy = cy; console.log(this.cy) }} />
 		);
 	}
 }
