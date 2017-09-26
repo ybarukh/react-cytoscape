@@ -19,6 +19,7 @@ import ReactCytoscape from 'react-cytoscape';
 
 Props are same as Cytoscape [builder function](http://js.cytoscape.org/#notation/elements-json).
 
+* `containerID` : HTML ID to `div` cytoscape container
 * `elements` : Object with `nodes` and `egdes`  attributes
 * `style` : Array of Style object
 * `layout` : Object with `name` of layout attribute. `ReactCytoscape` integrates [**cola** layout](https://github.com/cytoscape/cytoscape.js-cola).
