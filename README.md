@@ -1,7 +1,8 @@
 # React component for Cytoscape
 
 A React component to use simply the cytoscape js library.
-   
+
+
 [http://js.cytoscape.org](http://js.cytoscape.org)
 
 ## Installation
@@ -24,6 +25,8 @@ Props are same as Cytoscape [builder function](http://js.cytoscape.org/#notation
 * `containerID` : HTML ID to `div` cytoscape container
 * `elements` : Object with `nodes` and `egdes`  attributes
 * `style` : Array of Style object
-* `layout` : Object with `name` of layout attribute. `ReactCytoscape` integrates [**cola** layout](https://github.com/cytoscape/cytoscape.js-cola).
+* `layout` : Object with `name` of layout attribute.    
+`ReactCytoscape` integrates [**cola** layout](https://github.com/cytoscape/cytoscape.js-cola) and [**dagre** layout](https://github.com/cytoscape/cytoscape.js-dagre).
+
 * `styleContainer` : an object of `css` style
 * `cyRef` : a callback function to obtain a reference to `cytoscape object`

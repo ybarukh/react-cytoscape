@@ -1,11 +1,11 @@
 {
   "name": "react-cytoscape",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "build/index.js",
   "directories": {
     "lib": "lib"
-  },  
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel lib -d build",
@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "cytoscape": "^3.2.3",
-    "cytoscape-cola": "^2.0.0"
+    "cytoscape-cola": "^2.0.0",
+    "cytoscape-dagre": "^2.1.0"
   }
 }
