@@ -14,7 +14,11 @@ A React component to use simply the cytoscape js library.
 ```react
 import ReactCytoscape from 'react-cytoscape';
 
-<ReactCytoscape containerID="cy" elements={this.getElements()} cyRef={(cy) => { this.cy = cy; console.log(this.cy) }} />
+<ReactCytoscape containerID="cy" 
+	elements={this.getElements()} 
+	cyRef={(cy) => { this.cy = cy; console.log(this.cy) }} 
+	cytoscapeOptions={{wheelSensitivity: 0.1}}
+	layout={{name: 'dagre'}} />
 
 ```
 
@@ -30,3 +34,4 @@ Props are same as Cytoscape [builder function](http://js.cytoscape.org/#notation
 
 * `styleContainer` : an object of `css` style
 * `cyRef` : a callback function to obtain a reference to `cytoscape object`
+* `cytoscapeOptions` : Object with others cytoscape options builder
