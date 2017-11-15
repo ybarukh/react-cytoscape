@@ -2,6 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import Graph from './Graph.js';
 
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap-theme.css'
+
 class App extends React.Component {
 	render() {
 		return (

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { ReactCytoscape } from '../../lib';
+import { ReactCytoscape, cytoscape } from '../../lib';
+import { Grid, Row, Col, Button, ButtonToolbar, FormGroup, ControlLabel, FormControl } from "react-bootstrap";
 import './style.css'
+
+
 
 class Graph extends Component {
 
@@ -24,12 +27,44 @@ class Graph extends Component {
 	render() {
 
 		return (
-			<ReactCytoscape containerID="cy" 
-				elements={this.getElements()} 
-				cyRef={(cy) => { this.cy = cy; console.log(this.cy) }} 
-				cytoscapeOptions={{wheelSensitivity: 0.1}}
-				layout={{name: 'dagre'}} />
+			<Grid>
+				<Row>
+					<Col sm="8">
+						<ReactCytoscape containerID="cy"
+							elements={this.getElements()}
+							cyRef={(cy) => { this.cyRef(cy) }}
+							cytoscapeOptions={{ wheelSensitivity: 0.1 }}
+							layout={{ name: 'dagre' }} />
+					</Col>
+					<Col sm="4">
+						<FormGroup controlId="formControlsTextarea">
+							<ControlLabel>CODE</ControlLabel>
+							<FormControl componentClass="textarea" cols="100" rows="20" placeholder="textarea" inputRef={(ref) => this.text = ref} />
+						</FormGroup>
+						<ButtonToolbar>
+							<Button bsSize="small" onClick={this.handleEval.bind(this)}>Eval</Button>
+						</ButtonToolbar>
+					</Col>
+				</Row>
+				<Row>
+					<a href="http://js.cytoscape.org" target="blank">http://js.cytoscape.org</a>
+				</Row>
+			</Grid>
 		);
+	}
+
+	cyRef(cy) {
+		this.cy = cy;
+		cy.on('tap', 'node', function (evt) {
+			var node = evt.target;
+			console.log('tapped ' + node.id());
+		});
+	}
+
+	handleEval() {
+		const cy = this.cy;
+		const str = this.text.value;
+		eval(str);
 	}
 }
 
