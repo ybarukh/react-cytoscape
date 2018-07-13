@@ -12,7 +12,7 @@ A React component to use simply the cytoscape js library.
 ## Usage
 
 ```react
-import ReactCytoscape from 'react-cytoscape';
+import { ReactCytoscape } from 'react-cytoscape';
 
 <ReactCytoscape containerID="cy" 
 	elements={this.getElements()} 
